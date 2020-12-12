@@ -1,0 +1,163 @@
+<form [(formGroup)]="addStudentForm" (ngSubmit)="addStudent()">
+  <div class="form-group">
+    <div class="we600 form-title2 text-right">اضافة طالب</div>
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">الاسم الاول <span>*</span></h6>
+            <input type="text" name="FirstName" class="form-control" formControlName="FirstName"
+              placeholder="الاسم الاول" />
+            <span *ngIf="!addStudentForm.get('FirstName').valid && addStudentForm.get('FirstName').touched">ادخل الاسم
+              الاول</span>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">الاسم الاوسط <span>*</span></h6>
+            <input type="text" name="MiddleName" class="form-control" formControlName="MiddleName"
+              placeholder="الاسم الاوسط" />
+            <span *ngIf="!addStudentForm.get('MiddleName').valid && addStudentForm.get('MiddleName').touched">ادخل الاسم
+              الاوسط</span>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">الاسم الاخير<span>*</span></h6>
+            <input type="text" name="LastName" class="form-control" formControlName="LastName"
+              placeholder="الاسم الاخير" />
+            <span *ngIf="!addStudentForm.get('LastName').valid && addStudentForm.get('LastName').touched">ادخل الاسم
+              الاخير</span>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">النوع <span>*</span></h6>
+            <select formControlName="Gender" name="Gender" class="form-control">
+              <option disabled selected>النوع</option>
+              <option value="1">ذكر</option>
+              <option value="2">أنثى</option>
+            </select>
+            <!-- <span *ngIf="!addStudentForm.get('Gender').valid">اختار النوع</span> -->
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">تاريخ الميلاد<span>*</span></h6>
+            <input type="date" name="DateOfBirth" class="form-control" formControlName="DateOfBirth" />
+            <span *ngIf="!addStudentForm.get('DateOfBirth').valid && addStudentForm.get('DateOfBirth').touched">أختار
+              تاريخ الدورة الميلاد</span>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">المنطقة <span>*</span></h6>
+            <select formControlName="AreaId" name="AreaId" class="form-control">
+              <option disabled selected>اسم المنطقة</option>
+              <option [value]="area.Id" *ngFor="let area of areas">{{area.Name}}</option>
+            </select>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">المدرسة <span>*</span></h6>
+            <select formControlName="SchoolId" name="SchoolId" class="form-control" (change)="schoolOnChange()">
+              <option disabled selected>اسم المدرسة</option>
+              <option [value]="school.SchoolId" *ngFor="let school of schools; let i = index">{{school.Name}}</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item" *ngIf="addStudentForm.get('SchoolId').valid">
+            <h6 class="input-title">المرحلة <span>*</span></h6>
+            <select formControlName="StageId" name="StageId" class="form-control" (change)="stageOnChange()">
+              <option disabled selected>المرحلة</option>
+              <option *ngFor="let stage of selectedStage" [value]="stage.StageId">{{stage.Name}}</option>
+
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item" *ngIf="addStudentForm.get('StageId').valid">
+            <h6 class="input-title">الصف <span>*</span></h6>
+            <select formControlName="GradeId" name="GradeId" class="form-control" (change)="gradeOnChange()">
+              <option disabled selected>الصف</option>
+              <option *ngFor="let grade of slectedGrade" [value]="grade.GradeId">{{grade.Name}}</option>
+            </select>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item" *ngIf="addStudentForm.get('GradeId').valid">
+            <h6 class="input-title">الفصل <span>*</span></h6>
+            <select formControlName="ClassRoomId" name="ClassRoomId" class="form-control">
+              <option disabled selected>الفصل</option>
+              <option *ngFor="let classromm of selectedClassroom" [value]="classromm.ClassRoomId">{{classromm.Name}}
+              </option>
+            </select>
+          </div>
+          <div class="w-100"></div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">نوع الاعاقة <span>*</span></h6>
+            <select formControlName="DisabilityTypeId" name="DisabilityTypeId" class="form-control">
+              <option disabled selected>نوع الاعاقة</option>
+              <option value="1">سمعى</option>
+              <option value="2">بصرى</option>
+            </select>
+          </div>
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">نسبة الذكاء<span>*</span></h6>
+            <input type="text" name="IQ" class="form-control" formControlName="IQ" placeholder="نسبة الذكاء" />
+            <span *ngIf="!addStudentForm.get('IQ').valid && addStudentForm.get('IQ').touched">ادخل نسبة الذكاء</span>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">اسم والد الطالب<span>*</span></h6>
+            <select name="ParentId" class="form-control" formControlName="ParentId">
+              <option  [value]="parent.ParentId" *ngFor="let parent of allParents">{{parent.FirstName}} {{parent.MiddleName}}{{parent.LastName}}</option>
+            </select>
+          </div>
+          
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-item"></div>
+
+
+
+
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 form-item" formArrayName="Relatives"  *ngFor="let relati of addStudentForm.get('Relatives')['controls'];let i = index">
+            <div class=" relevants row" [formGroupName]="i" >
+
+                <div class="col-lg-6 col-sm-6 col-5 form-item">
+                  <h6 class="input-title">اسم قريب للطالب<span>*</span></h6>
+                  <input type="text" name="RelativeName" class="form-control" formControlName="RelativeName"
+                    placeholder="اسم قريب للطالب" />
+                </div>
+                <div class="col-lg-6 col-sm-6 col-5 form-item">
+                  <h6 class="input-title">رقم هاتف القريب<span>*</span></h6>
+                  <input type="text" name="RelativePhoneNumber" class="form-control" formControlName="RelativePhoneNumber"
+                    placeholder="رقم هاتف القريب" />
+                </div>
+                
+
+              
+             
+            </div>
+          </div>
+
+
+
+
+          <div class="col-lg-2 col-sm-2 col-xs-12 form-item">
+            <h6 class="input-title"><span></span></h6>
+            <button (click)="onAddRelative()" class="btn btn-default add-remove-btn" type="button">+</button>
+            <!-- <button class="btn btn-default add-remove-btn"  type="button">-</button>  -->
+          </div>
+          
+          <!-- <input type="text" name="ImageBase64" class="form-control" formControlName="ImageBase64" placeholder="" /> -->
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+
+
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item">
+            <button [disabled]="!addStudentForm.valid" class="btn btn-success form-control-general weight600" type="submit">اضافة</button>
+            <button class="btn btn-success form-control-general weight600" type="button">الرجوع</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+      </div>
+    </div>
+
+
+  </div>
+</form>

@@ -1,0 +1,244 @@
+<!-- 
+<h4>{{messageFromLogin}}</h4>
+<p>{{userLoggedToken | json}}</p>  -->
+<div class="container clearfix mt-10">
+  <div class="float-right mobile-block">
+    <div class="btn-group no-arrow">
+      <!-- <button class="btn" (click)="signOut()"><i class="fa fa-sign-out"></i></button> -->
+      <button class="btn" (click)="open(content)"><i class="fa fa-sign-out fa-2x"></i></button>
+
+    </div>
+
+
+    <div class="btn-group no-arrow">
+      <div class="btn-group" aria-label="Button group with nested dropdown">
+        <button class="btn" routerLink="profile"><i class="fa fa-user  user_profile fa-2x"></i></button>
+
+        <!-- <div class="dropdown-menu" ngbDropdownMenu>
+          <button ngbDropdownItem>بياناتى </button>
+          <button ngbDropdownItem>صفحتى الشخصية</button>
+          <button ngbDropdownItem>Four!</button>
+        </div> -->
+      </div>
+    </div>
+    <div class="btn-group no-arrow">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn" ngbDropdownToggle><i class="fa fa-bell setting-icon fa-2x"></i></button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button ngbDropdownItem>One</button>
+          <button ngbDropdownItem>Two</button>
+          <button ngbDropdownItem>Four!</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group no-arrow">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn" ngbDropdownToggle><i class="fa fa-envelope setting-icon fa-2x"></i></button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button ngbDropdownItem>One</button>
+          <button ngbDropdownItem>Two</button>
+          <button ngbDropdownItem>Four!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="float-left top-setting">
+    <div class="btn-group">
+      <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+        <button class="btn btn-success search-container form-control-general" ngbDropdownToggle>بحث من خلال</button>
+        <div class="dropdown-menu" ngbDropdownMenu>
+          <button ngbDropdownItem>طلاب</button>
+          <button ngbDropdownItem>مدرسين</button>
+          <button ngbDropdownItem>مشرفين</button>
+          <button ngbDropdownItem>قادة</button>
+          <button ngbDropdownItem>أطباء</button>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <input type="text" placeholder="خانة البحث"
+        class="form-control search-container search-input form-control-general" />
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-success form-control-general weight600 search-btn">بحث</button>
+    </div>
+  </div>
+
+</div>
+<div class="container clearfix" *ngIf="showAddStudent">
+  <div class="float-left">
+    <div class="btn-group plus-btn-container mt-15">
+      <button class="btn btn-success  form-control-general">أضافة طالب</button>
+    </div>
+  </div>
+  <!-- <h1>sssssssss{{userLoggedToken}}</h1> -->
+</div>
+<div class="container mainContent">
+
+  <ngb-accordion [closeOthers]="true" activeIds="static-1">
+    <ngb-panel id="static-1" title="Simple">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-2">
+      <ng-template ngbPanelTitle>
+        <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      </ng-template>
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+    <ngb-panel id="static-3" title="Disabled" [disabled]="true">
+      <ng-template ngbPanelContent>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+        aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+        craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+        labore sustainable VHS.
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>
+  
+
+
+
+
+  <!-- ACCORDION PART START -->
+  <div id="accordion-part" class="d-lg-none d-md-none d-sm-none">
+
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed;"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+            صفحتى الشخصية
+          </button>
+        </h5>
+      </div>
+      <div [ngbCollapse]="isCollapsed">
+        <div class="card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+          officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf
+          moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur
+          butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+          haven't heard of them accusamus labore sustainable VHS.
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed2 = !isCollapsed2"
+            [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample">
+            متابعين
+          </button>
+        </h5>
+      </div>
+      <div [ngbCollapse]="isCollapsed2">
+        <div class="card-body">
+          ichardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+          nesciunt
+          laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+          ea
+          proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+          aesthetic
+          synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h5 class="mb-0">
+          <button type="button" class="btn btn-outline-primary" (click)="isCollapsed3 = !isCollapsed3"
+            [attr.aria-expanded]="!isCollapsed3" aria-controls="collapseExample">
+            الاولاد
+          </button>
+        </h5>
+      </div>
+      <div [ngbCollapse]="isCollapsed3">
+        <div class="card-body">
+          Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+          single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+          anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+          beer
+          farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore
+          sustainable VHS.
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ACCORDION PART END -->
+
+  <ngb-tabset [destroyOnHide]="false" class="d-none d-sm-block">
+
+    <ngb-tab title="صفحتى الشخصية">
+      <ng-template ngbTabContent>
+        <app-my-profile></app-my-profile>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+      <ng-template ngbTabTitle>متابعين</ng-template>
+      <ng-template ngbTabContent>
+        <app-followers></app-followers>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab *ngIf="showParents">
+      <ng-template ngbTabTitle>الاولاد</ng-template>
+      <ng-template ngbTabContent>
+        <app-single-follower></app-single-follower>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab *ngIf="showAddStudent">
+      <ng-template ngbTabTitle>اضافة طالب</ng-template>
+      <ng-template ngbTabContent>
+        <app-manage-student></app-manage-student>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab *ngIf="showAddStudent">
+      <ng-template ngbTabTitle>دوراتى التدريبية</ng-template>
+      <ng-template ngbTabContent>
+        <app-courses></app-courses>
+      </ng-template>
+    </ngb-tab>
+
+
+
+  </ngb-tabset>
+
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">تسجيل الخروج</h4>
+  </div>
+  <div class="modal-body">
+    <p>هل تريد حقا تسجيل الخروج</p>
+  </div>
+  <div class="modal-footer d-block">
+    <button type="button" class="btn btn-danger float-right" (click)="signOut()">نعم</button>
+    <button type="button" class="float-left btn btn-success" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      لا
+    </button>
+  </div>
+</ng-template>

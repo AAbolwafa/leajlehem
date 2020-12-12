@@ -1,0 +1,173 @@
+<!-- <div class="container clearfix">
+  <div class="float-left">
+    <div class="btn-group plus-btn-container mt-15">
+        <button class="btn btn-success  form-control-general" >أضافة طالب</button>
+    </div>
+  </div>
+</div> -->
+<div class="container custom-tab">
+  <ngb-tabset [destroyOnHide]="false">
+    
+    <ngb-tab title="الصفحة الرئيسية">
+      <ng-template ngbTabContent>
+        comment will be here
+      </ng-template>
+    </ngb-tab>
+     
+    <ngb-tab>
+      <ng-template ngbTabTitle>معلومات عن الطالب</ng-template>
+      <ng-template ngbTabContent>
+        <div class="card" *ngFor="let student of students_of_parents ">
+          <div class="card-body">
+          <h4 class="card-title">{{student.Name}}</h4>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-tab>
+     
+    <ngb-tab>
+      <ng-template ngbTabTitle>المتابعين</ng-template>
+      <ng-template ngbTabContent>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 followers-full-container">
+              <div class="card  profile-item followers-item">
+                  <div class="card-body">
+                      <div>
+                          <img class="profile-img followers-img" src="../../assets/images/a.jpg" /> 
+                          <span>الطلاب</span>
+                      </div>
+                      <div class=" names-container">
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                      </div>
+                   
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 followers-full-container">
+              <div class="card  profile-item followers-item">
+                  <div class="card-body">
+                      <div>
+                          <img class="profile-img followers-img" src="../../assets/images/a.jpg" /> 
+                          <span>المدرسين</span>
+                      </div>
+                      <div class=" names-container">
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                      </div>
+                   
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 followers-full-container">
+              <div class="card  profile-item followers-item">
+                  <div class="card-body">
+                      <div>
+                          <img class="profile-img followers-img" src="../../assets/images/a.jpg" /> 
+                          <span>القادة</span>
+                      </div>
+                      <div class=" names-container">
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                      </div>
+                   
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 followers-full-container">
+              <div class="card  profile-item followers-item">
+                  <div class="card-body">
+                      <div>
+                          <img class="profile-img followers-img" src="../../assets/images/a.jpg" /> 
+                          <span>المشرفين</span>
+                      </div>
+                      <div class=" names-container">
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                      </div>
+                   
+                  </div>
+                </div>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 followers-full-container">
+              <div class="card  profile-item followers-item">
+                  <div class="card-body">
+                      <div>
+                          <img class="profile-img followers-img" src="../../assets/images/a.jpg" /> 
+                          <span>الاطباء</span>
+                      </div>
+                      <div class=" names-container">
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                          <h6 class="card-title title">احمد حسن السيد احمد</h6>
+                          <h6 class="card-title title">محمد مصطفى عبدالرحمن</h6>
+                          <h6 class="card-title title">صلاح سيد محمد</h6>
+                      </div>
+                   
+                  </div>
+                </div>
+          </div>
+      </div>
+      
+      
+      </ng-template>
+    </ngb-tab>
+ 
+
+     
+     
+  </ngb-tabset>
+  
+  </div>
+
+
+
+
+ 

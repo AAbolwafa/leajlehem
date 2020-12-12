@@ -1,0 +1,24 @@
+<div class="card  profile-item">
+    <div class="card-body row">
+        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <img *ngIf="jobType=='0'" class="profile-img" src="../../assets/images/family.svg" /> 
+            <img *ngIf="jobType=='1'" class="profile-img" src="../../assets/images/classroom.svg" /> 
+            <img *ngIf="jobType=='2'" class="profile-img" src="../../assets/images/leader.svg" /> 
+            <img *ngIf="jobType=='3'" class="profile-img" src="../../assets/images/leader.svg" /> 
+            <img *ngIf="jobType=='4'" class="profile-img" src="../../assets/images/leader.svg" /> 
+        </div>
+        <div class="col-lg-10 col-md-10 col-sm-6 col-xs-12 ">
+            <h5 class="card-title">{{newUserProfileData.Name}} </h5>
+            <h6 class="card-title">
+        
+                {{
+                jobType=="0"? 'والد / والدة': (jobType=="1"? 'مدرس / مدرسة' : (jobType=="2"? 'مشرف / مشرفة' : (jobType=="3"? 'قائد / قائدة' : 'أدمن / صاحب الموقع')))}}</h6>
+            <hr>
+            <h5 class="card-title">المنطقة : {{newUserProfileData.Area}}</h5>
+            <h6 class="card-title">رقم الهاتف : {{newUserProfileData.PhoneNumber}}</h6>   
+            <h6 class="card-title">البريد الالكترونى : {{newUserProfileData.Email}}</h6>
+        </div>
+        <button type="button" class="btn btn-success custom-btn-style">تعديل</button>
+     
+    </div>
+  </div>

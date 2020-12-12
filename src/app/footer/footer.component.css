@@ -1,0 +1,11 @@
+
+body{font-family: 'Tajawal', sans-serif;}
+p{font-weight: 400;font-family: 'Tajawal', sans-serif;}
+.copyright{   
+     background: #17be7b;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin: 0;
+}

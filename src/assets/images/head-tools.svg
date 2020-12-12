@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1144.5" height="123" viewBox="0 0 1144.5 123">
+  <defs>
+    <filter id="Rectangle_377" x="0" y="57.5" width="142" height="38" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_517" data-name="Group 517" transform="translate(-108.5)">
+    <rect id="Rectangle_421" data-name="Rectangle 421" width="1140" height="123" rx="4" transform="translate(113)" fill="#fff"/>
+    <g id="Group_514" data-name="Group 514">
+      <rect id="Rectangle_382" data-name="Rectangle 382" width="73" height="29" rx="2" transform="translate(113 16)" fill="#17be7b"/>
+      <text id="بحث" transform="translate(163 35)" fill="#f7ffff" font-size="14" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.009em"><tspan x="-25.983" y="0">بحث</tspan></text>
+    </g>
+    <g id="Group_515" data-name="Group 515">
+      <rect id="Rectangle_381" data-name="Rectangle 381" width="162" height="29" rx="2" transform="translate(202 16)" fill="#e0e0e0"/>
+      <text id="خانة_البحث" data-name="خانة البحث" transform="translate(354 35)" fill="#abb3b3" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.009em"><tspan x="-62.31" y="0">خانة البحث</tspan></text>
+    </g>
+    <g id="Group_516" data-name="Group 516">
+      <rect id="Rectangle_67" data-name="Rectangle 67" width="163" height="29" rx="2" transform="translate(380 16)" fill="#17be7b"/>
+      <text id="بحث_من_خلال" data-name="بحث من خلال" transform="translate(533 35)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI" letter-spacing="0.009em"><tspan x="-77.975" y="0">بحث من خلال</tspan></text>
+      <path id="Icon_ionic-ios-arrow-down" data-name="Icon ionic-ios-arrow-down" d="M13.214,16.857l5.312-5.316a1,1,0,0,1,1.418,0,1.012,1.012,0,0,1,0,1.422l-6.018,6.023a1,1,0,0,1-1.384.029L6.48,12.968A1,1,0,0,1,7.9,11.546Z" transform="translate(385.007 14.754)" fill="#fff"/>
+    </g>
+    <g id="Group_420" data-name="Group 420">
+      <g id="Group_365" data-name="Group 365" transform="translate(-47 -140)">
+        <g id="Group_354" data-name="Group 354" transform="translate(160 201)">
+          <g id="Group_355" data-name="Group 355">
+            <g id="Buttons_Contained_Enabled" data-name="Buttons / Contained / Enabled" transform="translate(0 0)">
+              <g transform="matrix(1, 0, 0, 1, -4.5, -61)" filter="url(#Rectangle_377)">
+                <rect id="Rectangle_377-2" data-name="Rectangle 377" width="133" height="29" rx="2" transform="translate(4.5 61)" fill="#18bc77"/>
+              </g>
+            </g>
+            <text id="إضافة_طالب" data-name="إضافة طالب" transform="translate(123 19)" fill="#fff" font-size="14" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.009em"><tspan x="-72.858" y="0">إضافة طالب</tspan></text>
+          </g>
+        </g>
+        <path id="Path_989" data-name="Path 989" d="M58.848,51.5a1.474,1.474,0,0,0-1.47,1.47v4.409H52.97a1.47,1.47,0,0,0,0,2.939h4.409v4.409a1.47,1.47,0,1,0,2.939,0V60.317h4.409a1.47,1.47,0,1,0,0-2.939H60.317V52.97A1.474,1.474,0,0,0,58.848,51.5Z" transform="translate(118.971 156.977)" fill="#fff"/>
+      </g>
+      <line id="Line_57" data-name="Line 57" y2="21" transform="translate(148 65.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+    <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M10,11.25A5.625,5.625,0,1,0,4.375,5.625,5.626,5.626,0,0,0,10,11.25Zm5,1.25H12.848a6.8,6.8,0,0,1-5.7,0H5a5,5,0,0,0-5,5v.625A1.875,1.875,0,0,0,1.875,20h16.25A1.875,1.875,0,0,0,20,18.125V17.5A5,5,0,0,0,15,12.5Z" transform="translate(1218 26)" fill="#3e3e3e"/>
+    <path id="Icon_material-message" data-name="Icon material-message" d="M21,3H5A2,2,0,0,0,3.01,5L3,23l4-4H21a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,21,3ZM19,15H7V13H19Zm0-3H7V10H19Zm0-3H7V7H19Z" transform="translate(1107 23)" fill="#3e3e3e"/>
+    <g id="notifications-24px" transform="translate(1162 24)">
+      <path id="Path_990" data-name="Path 990" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="Path_991" data-name="Path 991" d="M12.368,22.375a2.074,2.074,0,0,0,2.1-2.038H10.271A2.068,2.068,0,0,0,12.368,22.375Zm6.291-6.115v-5.1c0-3.129-1.72-5.748-4.718-6.442V4.029a1.573,1.573,0,0,0-3.146,0v.693c-3.009.693-4.718,3.3-4.718,6.442v5.1L4.724,17.574a1.016,1.016,0,0,0,.734,1.743H19.267a1.019,1.019,0,0,0,.744-1.743Z" transform="translate(-0.368 -0.208)" fill="#3e3e3e"/>
+    </g>
+  </g>
+</svg>

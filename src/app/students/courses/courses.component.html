@@ -1,0 +1,63 @@
+<div class="text-center no-result-general plus-btn-container">
+  <p class="text-center">لا يوجد دورات تدريبية مضافة</p>
+  <button type="button" (click)="showCourseForm()" class="btn btn-success  form-control-general">أضافة دورة تدريبية</button>
+</div>
+
+
+<form *ngIf="showAdd" [(formGroup)]="addCourseForm" (ngSubmit)="addCourse()">
+  <div class="form-group">
+    <div class="we600 form-title2 text-right">اضافة دورة تدريبية</div>
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">اسم الدورة التدريبية <span>*</span></h6>
+            <input type="text" name="courseName" class="form-control" formControlName="courseName"
+              placeholder="اسم الدورة التدريبية" />
+            <span *ngIf="!addCourseForm.get('courseName').valid && addCourseForm.get('courseName').touched">ادخل اسم
+              الدورة التدريبية</span>
+          </div>
+          <div class="clearfix"></div>
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">تاريخ الدورة التدريبية<span>*</span></h6>
+            <input type="date" name="courseDate" class="form-control" formControlName="courseDate" />
+            <span *ngIf="!addCourseForm.get('courseDate').valid && addCourseForm.get('courseDate').touched">أختار تاريخ الدورة التدريبية</span>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+            <h6 class="input-title">نبذة عن الدورة التدريبية <span>*</span></h6>
+            <input type="text" name="coursePreif" class="form-control" formControlName="coursePreif"
+              placeholder="نبذة عن الدورة التدريبية" />
+            <span *ngIf="!addCourseForm.get('coursePreif').valid && addCourseForm.get('coursePreif').touched">ادخل نبذة عن الدورة التدريبية</span>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+
+
+            <div class="form-group attach-container attach-general">
+
+              <input type="file" name="attach" class="form-control attach-input"   placeholder="ورقة تعريف الموظف"> 
+              <input type="text" hidden name="attach" class="form-control" formControlName="FileBase64">
+
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+            
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-item"></div>
+
+
+
+
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+
+      </div>
+    </div>
+
+
+  </div>
+</form>
