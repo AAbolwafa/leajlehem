@@ -1,14 +1,14 @@
-<header>
+<header class="curved-bg">
   <div class="container text-center"><img src="../../assets/images/Logo.svg" style="width: 120px;" /></div>
 </header>
-<div class="afterHeader">
+<!-- <div class="afterHeader">
   <img src="../../assets/images/patt.jpg" style="max-width: 100%;width: 100%;position: relative;top: -1px;" />
-</div>
+</div> -->
 <form class="small-form form-after-bg" [formGroup]="loginForm" (ngSubmit)="login()">
   <h4 class="we600 form-title">تسجيل الدخول</h4>
   <div class="form-group">
     <input type="email" name="email" class="form-control" formControlName="email" placeholder="البريد الالكترونى" />
-    <span class="small text-danger"  *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">من فضلك قم بادخال البريد
+    <span class="small text-danger" *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">من فضلك قم بادخال البريد
       الالكترونى</span>
   </div>
   <div class="form-group">

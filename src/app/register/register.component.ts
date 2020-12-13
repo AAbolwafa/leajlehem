@@ -58,7 +58,7 @@ export class RegisterComponent implements OnInit {
       Password: new FormControl(null, [Validators.required,Validators.minLength(6)]),
       REpassword: new FormControl(null, [Validators.required,Validators.minLength(6)]),
       PhoneNumber: new FormControl(null, Validators.required),
-      JobTypeId: new FormControl(null),
+      JobTypeId: new FormControl('0'),
       AreaId: new FormControl(null),
       SchoolId: new FormControl(null),
       FileBase64: new FormControl(null)

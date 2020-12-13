@@ -115,13 +115,21 @@ input.ng-invalid.ng-touched {
 }
 
 header {
-  background: #17be7b;
+  /* background: #17be7b; */
   padding: 30px 0 10px 0;
+}
+
+header.curved-bg {
+  min-height: 25vh;
+  background-image: url(./assets/images/header-bg.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .form-after-bg {
   position: relative;
-  top: -60px;
+  /* top: -60px; */
 }
 
 ::placeholder {
