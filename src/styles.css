@@ -14,6 +14,10 @@ body,
   text-align: right;
 }
 
+.main-wrapper {
+  min-height: calc(100vh - 41px);
+}
+
 .btn-success {
   color: #fff;
   background-color: #17be7b;
@@ -53,7 +57,7 @@ button.btn {
 }
 
 .small-form .form-control {
-  margin-bottom: 20px
+  /* margin-bottom: 20px */
 }
 
 .small-form2.small-form .form-control {
@@ -349,9 +353,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 12px;
   margin-left: 5px;
   padding: 10px 30px;
-}
-.equal-height{
-  min-height: calc(100vh - 239px);
 }
 .dropdown-item{text-align: right;}
 .user_profile{

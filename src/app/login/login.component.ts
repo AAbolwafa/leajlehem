@@ -12,7 +12,7 @@ import{LoginService} from '../services/login.service';
 })
 export class LoginComponent implements OnInit {
   loginForm:FormGroup;
-  loginMessage = false;
+  loginMessage = '';
   constructor(private route : Router, private UserServ:UserService , private LOgin:LoginService ) { }
 
   ngOnInit(): void {
@@ -55,8 +55,23 @@ export class LoginComponent implements OnInit {
         this.LOgin.userType.next(data.Data.JobType);
         
       },
-      err =>{
-        console.log(err.error.ErrorMessage)
+      err => {
+        console.log(err.error);
+        switch (err.error.ErrorCode) {
+          case 9: {
+            this.loginMessage = 'يجب إدخال كلمة مرور مكونة من 6 خانات على الأقل';
+            break;
+          }
+          case 21: {
+            this.loginMessage = 'لم يتم العثور على مستخدم بهذه البيانات';
+            break;
+          }
+          default: {
+            this.loginMessage = 'حدث خطأ';
+            break;
+          }
+        }
+        
       }
     )
 

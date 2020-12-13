@@ -4,26 +4,24 @@
 <div class="afterHeader">
   <img src="../../assets/images/patt.jpg" style="max-width: 100%;width: 100%;position: relative;top: -1px;" />
 </div>
-<div class="equal-height">
-  <form class="small-form form-after-bg" [formGroup]="loginForm" (ngSubmit)="login()">
-    <h4 class="we600 form-title">تسجيل الدخول</h4>
-    <div class="form-group">
-      <input type="email" name="email" class="form-control" formControlName="email" placeholder="البريد الالكترونى" />
-      <span *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">من فضلك قم بادخال البريد
-        الالكترونى</span>
-    </div>
-    <div class="form-group">
-      <input type="password" name="password" class="form-control" formControlName="password" placeholder="كلمة المرور">
-      <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">من فضلك قم بادخال كلمة
-        المرور</span>
-    </div>
-    <span class="custom-span">نسيت كلمة المرور ؟</span>
-    <div class="clearfix">
-      <button class="btn  btn-success float-right" type="submit">تسجيل الدخول</button>
-      <button class="btn btn-primary float-left" type="button" (click)="register()">مستخدم جديد؟</button>
-    </div>
-  </form>
-</div>
-<h4 *ngIf="loginMessage" class="error-login">Incorrect User Name Or Password</h4>
+<form class="small-form form-after-bg" [formGroup]="loginForm" (ngSubmit)="login()">
+  <h4 class="we600 form-title">تسجيل الدخول</h4>
+  <div class="form-group">
+    <input type="email" name="email" class="form-control" formControlName="email" placeholder="البريد الالكترونى" />
+    <span class="small text-danger"  *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">من فضلك قم بادخال البريد
+      الالكترونى</span>
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" class="form-control" formControlName="password" placeholder="كلمة المرور">
+    <span class="small text-danger" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">من فضلك قم بادخال كلمة
+      المرور</span>
+  </div>
+  <!-- <span class="custom-span">نسيت كلمة المرور ؟</span> -->
+  <div class="clearfix">
+    <button class="btn  btn-success float-right" type="submit">تسجيل الدخول</button>
+    <button class="btn btn-primary float-left" type="button" (click)="register()">مستخدم جديد؟</button>
+  </div>
+</form>
+<h4 *ngIf="loginMessage != ''" class="error-login">{{loginMessage}}</h4>
 
 <!-- <router-outlet></router-outlet> -->
