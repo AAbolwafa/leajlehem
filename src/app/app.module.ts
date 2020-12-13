@@ -22,6 +22,7 @@ import { ManageStudentComponent } from './students/manage-student/manage-student
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CoursesComponent } from './students/courses/courses.component';
 import { SchoolCollectionService } from './services/school-collection.service';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -33,7 +34,7 @@ import { SchoolCollectionService } from './services/school-collection.service';
     ProfileComponent,
     RegisterComponent,
     MyProfileComponent, 
-    FollowersComponent, SingleFollowerComponent, ManageStudentComponent, CoursesComponent  
+    FollowersComponent, SingleFollowerComponent, ManageStudentComponent, CoursesComponent, NotfoundComponent  
   ],
   imports: [
     BrowserModule,

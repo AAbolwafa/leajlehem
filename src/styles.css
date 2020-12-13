@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import'~bootstrap/dist/css/bootstrap.css';
+/* @import'~bootstrap/dist/css/bootstrap.css'; */
 @import "../node_modules/font-awesome/css/font-awesome.css";
 
 body {
@@ -30,16 +30,6 @@ body,
   border-color: #acacac;
 }
 
-button.btn {
-  font-weight: 600;
-  padding: 4px 10px;
-  font-size: 14px;
-}
-
-.we600 {
-  font-weight: 600;
-}
-
 .small-form {
   width: 320px;
   margin: 0 auto;
@@ -54,10 +44,6 @@ button.btn {
   text-align: center;
   margin: 5px 0 40px 0;
   color: #17be7b
-}
-
-.small-form .form-control {
-  /* margin-bottom: 20px */
 }
 
 .small-form2.small-form .form-control {
@@ -79,7 +65,7 @@ button.btn {
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  border: 0;
+  border-color: transparent;
 }
 
 .nav-tabs .nav-link.active,
@@ -115,7 +101,6 @@ input.ng-invalid.ng-touched {
 }
 
 header {
-  /* background: #17be7b; */
   padding: 30px 0 10px 0;
 }
 
@@ -125,6 +110,12 @@ header.curved-bg {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media (max-width: 991px) {
+  /* .inner-header .top-header .top-setting.d-flex {
+    flex-direction: column;
+  } */
 }
 
 .form-after-bg {
@@ -178,6 +169,7 @@ header.curved-bg {
   color: #777;
   position: absolute;
 }
+
 .attach-container.attach-general::before {
   content: "رفع ملفات";
 }
@@ -227,9 +219,8 @@ header.curved-bg {
 }
 
 .error-login {
+  margin-top: 30px;
   text-align: center;
-  position: relative;
-  top: -40px;
   color: red;
   font-size: 16px;
 }
@@ -246,27 +237,19 @@ header.curved-bg {
   color: #3e3e3e;
 }
 
-button.btn.search-container {
+.btn.search-container {
   font-weight: normal;
   width: 150px;
   text-align: right;
 }
 
 .form-control-general,
-button.btn.form-control-general {
+.btn.form-control-general {
   padding: 2px 10px;
   border-radius: 3px;
   height: 30px;
   margin-left: 15px;
 
-}
-
-.search-btn {
-  padding: 2px 20px !important;
-}
-
-.weight600 {
-  font-weight: 600;
 }
 
 .dropdown-toggle::after {
@@ -279,7 +262,6 @@ button.btn.form-control-general {
 
 .search-input {
   background: #e0e0e0;
-  font-size: 14px;
   border: 0;
 }
 
@@ -296,13 +278,13 @@ button.btn.form-control-general {
   top: 1px;
 }
 
-.mt-15 {
+/* .mt-15 {
   margin-top: 15px;
 }
 
 .mt-10 {
   margin-top: 10px;
-}
+} */
 
 
 
@@ -323,37 +305,92 @@ button.btn.form-control-general {
   border-radius: 5px;
 }
 
-.input-title{color: #777;font-size: 14px;margin-bottom: 10px;min-height: 16px;}
-.input-title span{color: red;}
-.form-title2{   
-     margin: 30px 0 20px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-    font-size: 14px;
-    color: #17be7b;
+.input-title {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 10px;
+  min-height: 16px;
 }
-.form-item{margin-bottom: 20px;}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.mat-h6, .mat-typography h6,.mat-h5, .mat-typography h5{font-family: 'Tajawal', sans-serif;font-size: 14px; font-weight: normal}
-.mat-body p, .mat-body-1 p, .mat-typography p{font-size: 14px;
+
+.input-title span {
+  color: red;
+}
+
+.form-title2 {
+  margin: 30px 0 20px 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  font-size: 14px;
+  color: #17be7b;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-h6,
+.mat-typography h6,
+.mat-h5,
+.mat-typography h5 {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 14px;
+  font-weight: normal
+}
+
+.mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+  font-size: 14px;
   margin: 0 0 12px;
-  font-weight: 600;}
-  .no-result-general{margin: 100px 0;}
-  .btn.add-remove-btn{
-    background: #333;
-    color: #fff;
-    border-radius: 0;
-    font-size: 20px;
-    padding: 0 10px;
-    margin:  5px;
-  }
- .form-item span{font-size: 12px;}
- .custom-tab .nav-tabs .nav-link.active{color: #fff;background-color: #17be7b;}
- .custom-tab{margin-top: 30px;}
- .custom-tab .nav-tabs{border: 0;}
-.nav-tabs .nav-link {font-weight: 600;font-size: 14px;}
- .custom-tab .nav-tabs .nav-link {
+  font-weight: 600;
+}
+
+.no-result-general {
+  margin: 100px 0;
+}
+
+.btn.add-remove-btn {
+  background: #333;
+  color: #fff;
+  border-radius: 0;
+  font-size: 20px;
+  padding: 0 10px;
+  margin: 5px;
+}
+
+.form-item span {
+  font-size: 12px;
+}
+
+.custom-tab .nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #17be7b;
+}
+
+.custom-tab {
+  margin-top: 30px;
+}
+
+.custom-tab .nav-tabs {
+  border: 0;
+}
+
+.nav-tabs .nav-link {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.custom-tab .nav-tabs .nav-link {
   font-weight: 600;
   color: #49505782;
   background: #e0e0e0;
@@ -362,40 +399,54 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-left: 5px;
   padding: 10px 30px;
 }
-.dropdown-item{text-align: right;}
-.user_profile{
+
+.dropdown-item {
+  text-align: right;
+}
+
+.user_profile {
   color: #17be7b;
 }
-.dropdown-menu.show {right: 0;left: auto !important;}
-.mainContent{min-height: calc(100vh - 124px);}
+
+.dropdown-menu.show {
+  right: 0;
+  left: auto !important;
+}
 
 /* mobile style */
 @media(max-width:480px) {
-  .custom-btn-style{position: static;}
-  .fixed-footer{position: static;}
-  .form-after-bg{top: auto;margin: 30px auto;}
-  .mobile-block{
+  .custom-btn-style {
+    position: static;
+  }
+
+  .fixed-footer {
+    position: static;
+  }
+
+  .form-after-bg {
+    top: auto;
+    margin: 30px auto;
+  }
+
+  .mobile-block {
     float: none !important;
     display: block;
     clear: both;
     text-align: center;
   }
-  .top-setting {
-    float: none !important;
-    display: block;
-    clear: both;
-}
-.top-setting .btn-group {
-  display: block;
-}
-.top-setting .btn-group .btn {
-  width: 100%;
-  margin-bottom: 5px;
-}
-.top-setting .search-input{margin-bottom: 5px;}
-.dropdown-menu.show{width: 100%;}
-.profile-item{margin: 0;}
-.custom-tab .nav-tabs .nav-link{padding: 10px;margin-bottom: 10px;}
+
+  .dropdown-menu.show {
+    width: 100%;
+  }
+
+  .profile-item {
+    margin: 0;
+  }
+
+  .custom-tab .nav-tabs .nav-link {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
 
 
 }

@@ -37,7 +37,7 @@
 
     <div class="clearfix">
       <button [disabled]="registerForm.get('Password').value != registerForm.get('REpassword').value" (click)="stepValue = 2" class="btn btn-success float-right" type="button">التالى</button>
-      <button routerLink="" class="btn btn-primary float-left" type="button">السابق</button>
+      <a routerLink="/login" class="btn btn-primary float-left" type="button">لديك حساب؟</a>
       <!-- <button class="btn btn-success float-left" type="button">السابق</button> -->
     </div>
   </div>
@@ -50,7 +50,6 @@
     <div class="form-group">
       <label for="JobTypeId">الوظيفة</label>
       <select formControlName="JobTypeId" name="JobTypeId" class="form-control" (change)="logselect()">
-        <!-- <option disabled >الوظيفة</option> -->
         <option value="0" selected>والد / والدة</option>
         <option value="1">مدرس / مدرسة</option>
         <option value="2">مشرف / مشرفة</option>
@@ -62,14 +61,15 @@
 
     <div class="form-group" *ngIf="showSchoolSelect">
       <div class="form-group">
+        <label for="AreaId">اسم المنطقة</label>
         <select formControlName="AreaId" name="AreaId" class="form-control">
           <option disabled selected>اسم المنطقة</option>
           <option [value]="area.Id" *ngFor="let area of areas">{{area.Name}}</option>
         </select>
       </div>
       <div class="form-group">
+        <label for="SchoolId">اسم المدرسة</label>
         <select formControlName="SchoolId" name="SchoolId" class="form-control">
-          <option disabled selected>اسم المدرسة</option>
           <option [value]="school.SchoolId" *ngFor="let school of schools">{{school.Name}}</option>
         </select>
       </div>
@@ -87,12 +87,6 @@
       <button (click)="stepValue = 1" class="btn btn-success float-left" type="button">السابق</button>
     </div>
   </div>
-  <span *ngIf="errorMessage!=''" class="small text-danger">{{errorMessage}}</span>
-  <div *ngIf="successNessage!=''" class="register-success">
-    <h4 class="we600 form-title">التسجيل</h4>
-    <h6>تم تسجيلك بنجاح</h6>
-    <h6>سيتم ارسال ايميل تأكيد بمجرد تأكيد معلوماتك</h6>
-  </div>
 
 
   <!-- sssssss<h1>{{registerForm}}</h1> -->
@@ -101,3 +95,10 @@
         <button class="btn btn-success float-left" type="button">السابق</button>
     </div> -->
 </form>
+
+<h4 *ngIf="errorMessage != ''" class="error-login">{{errorMessage}}</h4>
+<div *ngIf="successNessage!=''" class="register-success">
+  <h4 class="we600 form-title">التسجيل</h4>
+  <h6>تم تسجيلك بنجاح</h6>
+  <h6>سيتم ارسال ايميل تأكيد بمجرد تأكيد معلوماتك</h6>
+</div>

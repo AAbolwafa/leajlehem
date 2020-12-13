@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { from } from 'rxjs';
 import { SchoolService } from '../../app/services/school.service';
 import { AreasService } from '../services/areas.service';
 import {UserService} from '../services/user.service';
@@ -38,9 +37,9 @@ export class RegisterComponent implements OnInit {
     this.school_serv.getSchools().subscribe(
       (schools: any) => {
         this.schools = schools.Data;
-        console.log("schools === " + JSON.stringify(this.schools))
-      }
-      ,
+        console.log('this.schools');
+        console.log(this.schools);
+      },
       err => {
         console.log("error in connection");
 
@@ -48,7 +47,8 @@ export class RegisterComponent implements OnInit {
     this.areas_serv.getAreas().subscribe(
       (areas: any) => {
         this.areas = areas.Data;
-        console.log("areas === " + JSON.stringify(this.areas))
+        console.log('this.areas');
+        console.log(this.areas);
       }
     )
     this.registerForm = new FormGroup({
@@ -59,8 +59,8 @@ export class RegisterComponent implements OnInit {
       REpassword: new FormControl(null, [Validators.required,Validators.minLength(6)]),
       PhoneNumber: new FormControl(null, Validators.required),
       JobTypeId: new FormControl('0'),
-      AreaId: new FormControl(null),
-      SchoolId: new FormControl(null),
+      AreaId: new FormControl('1'),
+      SchoolId: new FormControl('1'),
       FileBase64: new FormControl(null)
     });
   } 
@@ -68,7 +68,8 @@ export class RegisterComponent implements OnInit {
     console.log(this.registerForm.value);
     this.userServ.registerUser(this.registerForm.value).subscribe(
       (data)=>{
-        console.log("data obj after register is " + JSON.stringify(data)) 
+        console.log('data to be sent');
+        console.log(data);
         this.successNessage = "تم التسجيل بنجاح" ;
         // this.hideRegisterForm = true;
         setTimeout(()=>{
@@ -78,8 +79,22 @@ export class RegisterComponent implements OnInit {
         
       },
       err =>{
-        console.log("error in connection " + JSON.stringify(err.error.ErrorMessage))
-        this.errorMessage = err.error.ErrorMessage;
+        console.log(err.error);
+        switch (err.error.ErrorCode) {
+          case 3: {
+            this.errorMessage = 'الاسم الأول مطلوب';
+            break;
+          }
+          case 21: {
+            this.errorMessage = '';
+            break;
+          }
+          default: {
+            this.errorMessage = 'حدث خطأ';
+            break;
+          }
+        }
+        
         this.stepValue = 1;
         
       }
