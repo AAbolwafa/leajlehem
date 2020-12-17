@@ -55,6 +55,14 @@ export class ProfileComponent implements OnInit {
           this.showParents = true;
           this.showAddStudent = false;
         }
+        if(this.userType == "1"){
+          console.log("user type is parent");
+          this.showAddStudent = false;
+        }
+        if(this.userType == "2"){
+          console.log("user type is parent"); 
+          this.showAddStudent = false;
+        }
         
       }
     )

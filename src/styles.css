@@ -451,4 +451,30 @@ body {
 
 
 }
-body{display: none}
+.custom-shape-divider-bottom-1607912061 {
+  position: absolute;
+  bottom: auto;
+  right: auto;
+  width: 100%;
+  overflow: hidden;
+  transform: rotate(178deg);
+  top: 100px;
+  left: 0;
+}
+
+.custom-shape-divider-bottom-1607912061 svg {
+  position: relative;
+  display: block;
+  width: calc(400% + 36.3px);
+  height: 200px;
+}
+
+.custom-shape-divider-bottom-1607912061 .shape-fill {
+  fill: #FFFFFF;
+}
+header{background: #17be7b;
+  min-height: 200px;}
+  @media(max-width:480px){
+    .custom-shape-divider-bottom-1607912061{transform: rotate(174deg);}
+  }
+  body{overflow-x: hidden;}

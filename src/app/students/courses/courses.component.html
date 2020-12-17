@@ -1,4 +1,4 @@
-<div class="text-center no-result-general plus-btn-container">
+<div *ngIf="showCourseButton" class="text-center no-result-general plus-btn-container">
   <p class="text-center">لا يوجد دورات تدريبية مضافة</p>
   <button type="button" (click)="showCourseForm()" class="btn btn-success  form-control-general">أضافة دورة تدريبية</button>
 </div>
@@ -12,37 +12,52 @@
         <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
             <h6 class="input-title">اسم الدورة التدريبية <span>*</span></h6>
-            <input type="text" name="courseName" class="form-control" formControlName="courseName"
+            <input type="text" name="Name" class="form-control" formControlName="Name"
               placeholder="اسم الدورة التدريبية" />
-            <span *ngIf="!addCourseForm.get('courseName').valid && addCourseForm.get('courseName').touched">ادخل اسم
+            <span *ngIf="!addCourseForm.get('Name').valid && addCourseForm.get('Name').touched">ادخل اسم
               الدورة التدريبية</span>
           </div>
-          <div class="clearfix"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 "></div>
 
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
             <h6 class="input-title">تاريخ الدورة التدريبية<span>*</span></h6>
             <input type="date" name="courseDate" class="form-control" formControlName="courseDate" />
             <span *ngIf="!addCourseForm.get('courseDate').valid && addCourseForm.get('courseDate').touched">أختار تاريخ الدورة التدريبية</span>
           </div>
-          <div class="clearfix"></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 "></div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
             <h6 class="input-title">نبذة عن الدورة التدريبية <span>*</span></h6>
-            <input type="text" name="coursePreif" class="form-control" formControlName="coursePreif"
+            <input type="text" name="Description" class="form-control" formControlName="Description"
               placeholder="نبذة عن الدورة التدريبية" />
-            <span *ngIf="!addCourseForm.get('coursePreif').valid && addCourseForm.get('coursePreif').touched">ادخل نبذة عن الدورة التدريبية</span>
+            <span *ngIf="!addCourseForm.get('Description').valid && addCourseForm.get('Description').touched">ادخل نبذة عن الدورة التدريبية</span>
           </div>
-          <div class="clearfix"></div>
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 "></div>
+          <div formArrayName="Files" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item" *ngFor="let file of addCourseForm.get('Files')['controls']; let i = index">
 
 
-            <div class="form-group attach-container attach-general">
-
-              <input type="file" name="attach" class="form-control attach-input"   placeholder="ورقة تعريف الموظف"> 
+            <div class="form-group attach-container attach-general"[formGroupName]="i"  >
+              <div>
+                <input type="file" (change)="onChange($event)" name="attach" class="form-control attach-input"   placeholder="ورقة تعريف الموظف"> 
               <input type="text" hidden name="attach" class="form-control" formControlName="FileBase64">
+              </div>
+              
 
             </div>
           </div>
-          <div class="clearfix"></div>
+
+  <!-- <div formArrayName="hoppies">
+    <div class="form-group" *ngFor="let hoppy of registerForm.get('hoppies')['controls']; let i = index">
+      <input type="text" class="form-control" [formControlName]="i" />
+    </div>
+    <button type="button" (click)="addHopy()">Add hoppy</button>
+  </div> -->
+
+
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 "></div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+            <button style="margin-left: 30px;" type="submit" class="btn btn-success">حفظ</button>
+            <button (click)="cancelAdd()" type="button" class="btn btn-primary">الرجوع</button>
+          </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-item">
             
           </div>
